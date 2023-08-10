@@ -2,25 +2,39 @@
   "name": "@wezom/cli-arguments",
   "version": "0.1.0",
   "description": "The tiny wrapper over the `yargs` lib",
-  "main": "lib/index.mjs",
-  "types": "lib/index.d.mts",
+  "main": "lib/index.js",
+  "module": "lib/index.mjs",
+  "types": "lib/index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "require": "./lib/index.js",
+      "import": "./lib/index.mjs",
+      "types": "./lib/index.d.ts"
+    }
+  },
   "files": [
     "lib"
   ],
   "scripts": {
-    "build": "rollup --config rollup.config.mjs",
+    "build": "rollup --config rollup.config.js",
     "prebuild": "del-cli lib",
     "postbuild": "del-cli lib/**/__specs__",
     "test": "vitest run",
     "test-with-watch-mode": "vitest",
     "test-with-coverage": "vitest run --coverage && istanbul-badges-readme && prettier \"./README.md\" --check --write",
-    "lint": "eslint \"./src/**/**.mts\" --cache --cache-location ./.cache/eslint/src",
+    "lint": "eslint \"./src/**/**.ts\" --cache --cache-location ./.cache/eslint/src",
     "lint-with-autofix": "pnpm run lint --fix",
-    "format": "prettier \"./src/**/*.mts\" --write --check",
+    "format": "prettier \"./src/**/*.ts\" --write --check",
     "local-pr-ready-check": "pnpm run format && pnpm run lint-with-autofix && pnpm run test",
     "ci-test": "pnpm run lint && pnpm run test"
   },
-  "keywords": [],
+  "keywords": [
+    "cli",
+    "arguments",
+    "argv",
+    "yargs"
+  ],
   "author": "OlehDutchenko <dutchenko.o.dev@gmmail.com>",
   "license": "BSD 3-Clause License",
   "bugs": {
@@ -37,6 +51,7 @@
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.3",
     "@rollup/plugin-typescript": "^11.1.2",
+    "@types/yargs": "^17.0.24",
     "@vitest/coverage-istanbul": "^0.34.1",
     "@wezom/eslint-config": "^11.0.5",
     "@wezom/eslint-config-ts": "^11.0.5",
@@ -50,5 +65,8 @@
     "rollup": "^3.27.0",
     "typescript": "^5.1.6",
     "vitest": "^0.34.1"
+  },
+  "dependencies": {
+    "yargs": "^17.7.2"
   }
 }
