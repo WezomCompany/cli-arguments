@@ -13,20 +13,25 @@ export class CliArguments {
 		}
 	}
 
-	getString(key: string): string | null {
+	protected getArgvValue(key: string): unknown {
 		const value = this.argv[key];
+		return Array.isArray(value) ? value[value.length - 1] : value;
+	}
+
+	getString(key: string): string | null {
+		const value = this.getArgvValue(key);
 		return typeof value === 'string' && value.length > 0 ? value : null;
 	}
 
 	getNumber(key: string): number | null {
-		const value = this.argv[key];
+		const value = this.getArgvValue(key);
 		return typeof value === 'number' && Number.isFinite(value)
 			? value
 			: null;
 	}
 
 	getBoolean(key: string): boolean | null {
-		const value = this.argv[key];
+		const value = this.getArgvValue(key);
 		return typeof value === 'boolean' ? value : null;
 	}
 }

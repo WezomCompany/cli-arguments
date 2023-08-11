@@ -8,8 +8,8 @@
 
 ## Coverage
 
-| Statements                                                                              | Branches                                                                         | Functions                                                                              | Lines                                                                         |
-| --------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| ![Statements](https://img.shields.io/badge/statements-90%25-brightgreen.svg?style=flat) | ![Branches](https://img.shields.io/badge/branches-87.5%25-yellow.svg?style=flat) | ![Functions](https://img.shields.io/badge/functions-100%25-brightgreen.svg?style=flat) | ![Lines](https://img.shields.io/badge/lines-90%25-brightgreen.svg?style=flat) |
+| Statements                                                                                 | Branches                                                                          | Functions                                                                              | Lines                                                                            |
+| ------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| ![Statements](https://img.shields.io/badge/statements-91.66%25-brightgreen.svg?style=flat) | ![Branches](https://img.shields.io/badge/branches-88.88%25-yellow.svg?style=flat) | ![Functions](https://img.shields.io/badge/functions-100%25-brightgreen.svg?style=flat) | ![Lines](https://img.shields.io/badge/lines-91.66%25-brightgreen.svg?style=flat) |
 
 ---
