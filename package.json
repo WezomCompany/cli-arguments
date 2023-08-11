@@ -1,6 +1,6 @@
 {
   "name": "@wezom/cli-arguments",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "The tiny wrapper over the `yargs` lib",
   "main": "lib/index.js",
   "module": "lib/index.mjs",
