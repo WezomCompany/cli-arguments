@@ -43,6 +43,16 @@ describe('CliArguments', () => {
 			]);
 			expect(cliArguments.getString('string')).toBe(null);
 		});
+
+		it('should throw an error if the wanted argument is not defined when calling `getString` in strict mode', () => {
+			const cliArguments = new CliArguments([
+				'node-interpreter',
+				'cli-command',
+			]);
+			expect(() => cliArguments.getString('arg-name', true)).toThrow(
+				CliArguments.getStringError('arg-name')
+			);
+		});
 	});
 
 	describe('method `.getNumber(key)`', () => {
@@ -86,6 +96,16 @@ describe('CliArguments', () => {
 				'Infinity',
 			]);
 			expect(cliArguments.getNumber('port')).toBe(null);
+		});
+
+		it('should throw an error if the wanted argument is not defined when calling `getNumber` in strict mode', () => {
+			const cliArguments = new CliArguments([
+				'node-interpreter',
+				'cli-command',
+			]);
+			expect(() => cliArguments.getNumber('arg-name', true)).toThrow(
+				CliArguments.getNumberError('arg-name')
+			);
 		});
 	});
 
@@ -136,6 +156,16 @@ describe('CliArguments', () => {
 				'--no-enabled',
 			]);
 			expect(cliArguments.getBoolean('enabled')).toBe(false);
+		});
+
+		it('should throw an error if the wanted argument is not defined when calling `getBoolean` in strict mode', () => {
+			const cliArguments = new CliArguments([
+				'node-interpreter',
+				'cli-command',
+			]);
+			expect(() => cliArguments.getBoolean('arg-name', true)).toThrow(
+				CliArguments.getBooleanError('arg-name')
+			);
 		});
 	});
 });
