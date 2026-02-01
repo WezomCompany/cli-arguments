@@ -57,7 +57,7 @@
     "@wezom/eslint-config": "^11.0.5",
     "@wezom/eslint-config-ts": "^11.0.5",
     "del-cli": "^5.0.0",
-    "eslint": "^8.46.0",
+    "eslint": "^9.26.0",
     "eslint-config-prettier": "^8.9.0",
     "glob": "^10.3.3",
     "istanbul-badges-readme": "^1.8.5",
